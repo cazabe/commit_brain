@@ -1,19 +1,17 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const CommitCard = ({ data }) => {
-    console.log(data);
     return (
         <div>
             <Card>
-                <Card.Header>Featured</Card.Header>
+                <Card.Header>Commit author: {data.author.login} <span><img className="avatar-img" src={data.author.avatar_url} alt='avatar' /></span></Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title>{data.commit.message}</Card.Title>
                     <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
+                        Fecha:{data.commit.committer.date}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <a href={data.commit.url} target='_blanck'>Go to commit</a>
                 </Card.Body>
             </Card>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import s_getCommits from "../../services/commits.service";
 import { ReactComponent as HomePageImg } from '../../assets/commits.svg';
 import CommitCard from "./components/commitCard";
+import './homePage.css';
 
 const HomePage = () => {
     const [commits, setCommits] = useState([]);
@@ -11,19 +12,21 @@ const HomePage = () => {
 
     const getCommit = async () => {
         const res = await s_getCommits();
-        console.log('Res en la funcion', res.data);
+        console.log(res);
         if (!res) {
-            alert('There was an unexpexted error, please try again')
+            alert('There was an unexpected error, please try again');
         }
         setCommits(res.data);
     }
     return (
-        <div>
+        <div style={{ padding: 50 }}>
             <h1>Commmit Brain</h1>
-            <div className="row col-md-6">
-                {commits.map((commit) => { return (<div className="col-md-4"><CommitCard data={commit} /></div>) })}
+            <div className="row" style={{ width: '50%' }}>
+                {commits.map((commit) => { return (<div className="col-md-6 mt-3" key={commit.sha}><CommitCard data={commit} /></div>) })}
             </div>
-
+            <div className="hp-image">
+                <HomePageImg />
+            </div>
         </div>
     );
 }

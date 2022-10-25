@@ -1,0 +1,11 @@
+.hp-image {
+    width: 40%;
+    position: relative;
+    left: 1000px;
+    bottom: 700px;
+}
+
+.avatar-img {
+    height: 30px;
+    border-radius: 50px;
+}
