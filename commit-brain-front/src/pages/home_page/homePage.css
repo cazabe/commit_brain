@@ -8,4 +8,32 @@
 .avatar-img {
     height: 30px;
     border-radius: 50px;
+    float: right;
+}
+
+.action-btn {
+    background-color: #FFC100;
+    border-radius: 50px;
+    padding: 8px;
+    text-align: center;
+}
+
+.action-btn a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card-header {
+    background: #3F525B;
+    color: #fff;
+}
+
+
+@media only screen and (min-width: 1366px) {
+    .hp-image {
+        width: 40%;
+        position: relative;
+        left: 700px;
+        bottom: 900px;
+    }
 }
