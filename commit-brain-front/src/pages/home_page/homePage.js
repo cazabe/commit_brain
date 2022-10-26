@@ -21,7 +21,7 @@ const HomePage = () => {
     }
     return (
         <div style={{ padding: 50 }}>
-            <h1>Commmit Brain</h1><img style={{ height: 50 }} src={Octocat} alt='octo cat github' />
+            <h1>Commit Brain</h1><img style={{ height: 50 }} src={Octocat} alt='octo cat github' />
             <div className="row" style={{ width: '50%' }}>
                 {commits.map((commit) => { return (<div className="col-md-6 mt-3" key={commit.sha}><CommitCard data={commit} /></div>) })}
             </div>
